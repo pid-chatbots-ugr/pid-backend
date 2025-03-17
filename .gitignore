@@ -1,0 +1,14 @@
+# Ignorar archivos de entorno
+.env
+
+# Ignorar carpetas de entornos virtuales
+venv/
+__pycache__/
+
+# Ignorar logs y archivos temporales
+*.log
+*.sqlite3
+.DS_Store
+
+# Ignorar archivos de configuración
+credentials.env
