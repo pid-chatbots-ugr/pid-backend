@@ -33,7 +33,7 @@ class MongoDBManager:
         self.db = self.client[self.db_name]
         self.collection = self.db[self.collection_name]
 
-    def insertar_conversacion(self, usuario, conversacion,metadata=None):
+    def insertar_conversacion(self, usuario, conversacion,metadata=None,timestamp = time.time()):
         """
         Inserta una nueva conversación en la colección.
         :param usuario: Nombre o ID del usuario.
@@ -43,7 +43,7 @@ class MongoDBManager:
         documento = {
             "usuario": usuario,
             "conversación": conversacion,
-            "timestamp": time.time(),
+            "timestamp": timestamp,
             "metadata": metadata
         }
         resultado = self.collection.insert_one(documento)
